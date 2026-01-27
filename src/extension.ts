@@ -165,7 +165,9 @@ export async function activate(
 	);
 
 	return Promise.resolve({
-		parseProjectFile: await getBazelProjectFile(),
+		parseProjectFile: isBazelWorkspaceRoot()
+			? await getBazelProjectFile()
+			: undefined,
 	});
 }
 

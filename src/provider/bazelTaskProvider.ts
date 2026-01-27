@@ -61,7 +61,13 @@ async function getBazelTasks(): Promise<Task[]> {
 	const taskDefinitions: BazelTaskDefinition[] = [];
 
 	// add any ij converted run targets to vscode tasks
-	const bazelProjectFile = await getBazelProjectFile();
+	let bazelProjectFile;
+	try {
+		bazelProjectFile = await getBazelProjectFile();
+	} catch {
+		// No .bazelproject file exists, return empty tasks
+		return [];
+	}
 	if (bazelProjectFile.importRunConfigurations) {
 		const rootPath = getWorkspaceRoot();
 		bazelProjectFile.importRunConfigurations.forEach((runConfig) => {

@@ -19,10 +19,10 @@ derive_targets_from_directories: true
 
 export function getWorkspaceRoot(): string {
 	if (workspace.workspaceFile) {
-		return dirname(workspace.workspaceFile.path);
+		return dirname(workspace.workspaceFile.fsPath);
 	} else {
 		if (workspace.workspaceFolders && workspace.workspaceFolders.length > 0) {
-			return workspace.workspaceFolders[0].uri.path;
+			return workspace.workspaceFolders[0].uri.fsPath;
 		}
 	}
 	throw new Error('invalid workspace root');
