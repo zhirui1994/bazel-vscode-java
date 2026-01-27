@@ -1,5 +1,5 @@
 import { BazelProjectView } from './types';
 
 export interface BazelVscodeExtensionAPI {
-	readonly parseProjectFile: BazelProjectView;
+	readonly parseProjectFile: BazelProjectView | undefined;
 }
