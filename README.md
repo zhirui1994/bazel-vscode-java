@@ -1,14 +1,14 @@
-# Bazel extension for Java™️ Language Support for VS Code
+# Bazel extension for Java™️ Language Support by Compass for VS Code
 
-[![Build](https://github.com/salesforce/bazel-vscode-java/actions/workflows/ci.yml/badge.svg)](https://github.com/salesforce/bazel-vscode-java/actions/workflows/ci.yml)
-[![License](https://img.shields.io/github/license/salesforce/bazel-vscode-java?style=for-the-badge)](https://github.com/salesforce/bazel-vscode-java/blob/master/LICENSE)
+[![Build](https://github.com/zhirui1994/bazel-vscode-java/actions/workflows/ci.yml/badge.svg)](https://github.com/zhirui1994/bazel-vscode-java/actions/workflows/ci.yml)
+[![License](https://img.shields.io/github/license/zhirui1994/bazel-vscode-java?style=for-the-badge)](https://github.com/zhirui1994/bazel-vscode-java/blob/master/LICENSE)
 
 This extension adds support for Bazel to the Java™️ Language Support for VS Code.
 It plugs into the Eclipse Java Language server and computes project dependencies and classpath information using Bazel `BUILD` files.
 
 ## Getting Started
 
-Go and [install the extension](vscode:extension/sfdc.bazel-vscode-java) from the VSCode Marketplace (see [listing here](https://marketplace.visualstudio.com/items?itemName=sfdc.bazel-vscode-java)) or OpenVSX Registry (see [listing here](https://open-vsx.org/extension/sfdc/bazel-vscode-java)).
+Go and [install the extension](vscode:extension/COMP.java-bazel-extension-compass) from the VSCode Marketplace (see [listing here](https://marketplace.visualstudio.com/items?itemName=COMP.java-bazel-extension-compass)) or OpenVSX Registry (see [listing here](https://open-vsx.org/extension/COMP/java-bazel-extension-compass)).
 
 Once installed, open VSCode in any Bazel Workspace with Java targets.
 The extension will look for a `WORKSPACE` (`WORKSPACE.bazel`) file to identify a Bazel workspace.

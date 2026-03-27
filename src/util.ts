@@ -1,6 +1,6 @@
 import { existsSync, mkdirSync, writeFileSync } from 'fs';
 import { dirname, join } from 'path';
-import { Uri, window, workspace } from 'vscode';
+import { Uri, workspace } from 'vscode';
 
 // TODO: pull this template out into a file
 const BAZELPROJECT_TEMPLATE = `
@@ -17,13 +17,13 @@ directories:
 derive_targets_from_directories: true
 `;
 
-export const outputLog = window.createOutputChannel('Bazel - Java', {
-	log: true,
-});
-
 export function getWorkspaceRoot(): string {
 	if (workspace.workspaceFile) {
-		return dirname(workspace.workspaceFile.path);
+		const workspaceFilePath = dirname(workspace.workspaceFile.path);
+		if (workspaceFilePath.endsWith('.vscode')) {
+			return dirname(workspaceFilePath);
+		}
+		return workspaceFilePath;
 	} else {
 		if (workspace.workspaceFolders && workspace.workspaceFolders.length > 0) {
 			return workspace.workspaceFolders[0].uri.path;
